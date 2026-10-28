@@ -40,7 +40,7 @@ histórico ficam no localStorage do navegador.
 
 ## Aba Rede
 
-![Aba Rede do navegador mostrando a requisição da página]("img_rede.png")
+![Aba Rede do navegador mostrando a requisição da página](img_rede.png)
 
 O print mostra a requisição que carregou a página do app, feita pelo navegador ao
 servidor local do Python (`python -m http.server 8000`): método **GET**, URL
@@ -48,6 +48,6 @@ servidor local do Python (`python -m http.server 8000`): método **GET**, URL
 entregue com sucesso. As demais requisições da lista são o `style.css`, o
 `script.js` e a fonte Barlow; como o app é da trilha C, não há chamadas a APIs,
 e os dados ficam no localStorage do navegador.
-## Autor
 
+## Autor
 Nome: Italo Matheus 
