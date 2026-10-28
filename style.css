@@ -1,13 +1,17 @@
-/* ===== Cores e medidas reutilizadas no projeto ===== */
+/* ===== Cores, fonte e medidas reutilizadas no projeto ===== */
 :root {
-  --cor-primaria: #1f6feb;
-  --cor-primaria-escura: #1858c0;
-  --cor-texto: #1f2328;
-  --cor-texto-suave: #59636e;
-  --cor-fundo: #f3f5f8;
-  --cor-cartao: #ffffff;
-  --cor-borda: #d0d7de;
-  --raio: 10px;
+  --cor-primaria: #1e2a38;         
+  --cor-primaria-escura: #2f4054;  
+  --cor-texto: #1e2a38;
+  --cor-texto-suave: #66717d;
+  --cor-fundo: #f7f8f9;
+  --cor-cartao: #ffffff;          
+  --cor-borda: #dadfe4;
+  --cor-destaque: #f2c230;        
+  --cor-erro: #b42318;
+  --raio: 6px;
+  --fonte: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --largura-max: 960px;
 }
 
 /* ===== Base ===== */
@@ -17,60 +21,61 @@
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  font-size: 1rem;
+  font-family: var(--fonte);
+  font-size: 1.0625rem;
   line-height: 1.5;
   color: var(--cor-texto);
   background-color: var(--cor-fundo);
+  font-variant-numeric: tabular-nums; 
 }
 
 /* ===== Cabeçalho ===== */
 header {
-  padding: 1.5rem 1rem;
-  text-align: center;
-  color: #ffffff;
-  background-color: var(--cor-primaria);
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 1.5rem;
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 header p {
   margin: 0.25rem 0 0;
-  opacity: 0.9;
+  color: var(--cor-texto-suave);
 }
 
 /* ===== Conteúdo principal ===== */
 main {
-  width: 100%;
-  max-width: 480px;
+  max-width: var(--largura-max);
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0 1.25rem 2rem;
 }
 
+/* Seções separadas só por uma linha fina, sem caixas */
 .cartao {
-  margin-bottom: 1rem;
-  padding: 1.25rem;
-  background-color: var(--cor-cartao);
-  border: 1px solid var(--cor-borda);
-  border-radius: var(--raio);
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--cor-borda);
 }
 
 .cartao h2 {
   margin: 0 0 1rem;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 /* ===== Rodapé ===== */
 footer {
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.85rem;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
+  font-size: 0.875rem;
   color: var(--cor-texto-suave);
+  border-top: 1px solid var(--cor-borda);
 }
-
 /* ===== Formulário ===== */
 form {
   display: flex;
