@@ -59,7 +59,6 @@ function preencherUnidades() {
 /* ===== Conversão ===== */
 
 // Lê o texto digitado e devolve um número, ou NaN se for inválido.
-// Aceita vírgula ou ponto como separador decimal ("2,5" ou "2.5").
 function lerValor(texto) {
   const limpo = texto.trim().replace(",", ".");
   if (limpo === "") {
@@ -133,8 +132,7 @@ function converter(evento) {
 const CHAVE_HISTORICO = "converteja-historico";
 const LIMITE_HISTORICO = 5;
 
-// Lê o histórico salvo no navegador. Se não existir ou estiver
-// corrompido, devolve uma lista vazia em vez de quebrar o app.
+// Lê o histórico salvo no navegador
 function carregarHistorico() {
   try {
     const dados = JSON.parse(localStorage.getItem(CHAVE_HISTORICO));
@@ -149,8 +147,7 @@ function salvarHistorico(lista) {
   try {
     localStorage.setItem(CHAVE_HISTORICO, JSON.stringify(lista));
   } catch {
-    // Se o navegador bloquear o armazenamento, o app segue funcionando,
-    // apenas sem guardar o histórico.
+    
   }
 }
 
