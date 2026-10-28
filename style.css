@@ -1,0 +1,72 @@
+/* ===== Cores e medidas reutilizadas no projeto ===== */
+:root {
+  --cor-primaria: #1f6feb;
+  --cor-primaria-escura: #1858c0;
+  --cor-texto: #1f2328;
+  --cor-texto-suave: #59636e;
+  --cor-fundo: #f3f5f8;
+  --cor-cartao: #ffffff;
+  --cor-borda: #d0d7de;
+  --raio: 10px;
+}
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+/* ===== Cabeçalho ===== */
+header {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: var(--cor-primaria);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header p {
+  margin: 0.25rem 0 0;
+  opacity: 0.9;
+}
+
+/* ===== Conteúdo principal ===== */
+main {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.cartao {
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+  background-color: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.cartao h2 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+}
+
+/* ===== Rodapé ===== */
+footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
