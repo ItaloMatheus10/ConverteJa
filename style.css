@@ -70,3 +70,69 @@ footer {
   font-size: 0.85rem;
   color: var(--cor-texto-suave);
 }
+
+/* ===== Formulário ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+label {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  color: var(--cor-texto);
+  background-color: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+/* Destaque visível ao navegar pelo teclado (Tab) ou clicar no campo */
+input:focus,
+select:focus,
+button:focus-visible {
+  outline: 3px solid rgba(31, 111, 235, 0.35);
+  outline-offset: 1px;
+  border-color: var(--cor-primaria);
+}
+
+/* ===== Botões ===== */
+button {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--raio);
+}
+
+form button {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  color: #ffffff;
+  background-color: var(--cor-primaria);
+  border: none;
+}
+
+form button:hover {
+  background-color: var(--cor-primaria-escura);
+}
+
+.botao-secundario {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.9rem;
+  color: var(--cor-texto-suave);
+  background-color: transparent;
+  border: 1px solid var(--cor-borda);
+}
+
+.botao-secundario:hover {
+  color: var(--cor-texto);
+  border-color: var(--cor-texto-suave);
+}
