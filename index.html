@@ -14,7 +14,32 @@
   </header>
 
   <main>
-   
+    <section class="cartao">
+      <h2>Converter</h2>
+
+      <form id="form-conversao" novalidate>
+        <label for="categoria">Categoria</label>
+        <select id="categoria">
+          <option value="comprimento">Comprimento</option>
+          <option value="massa">Massa</option>
+          <option value="temperatura">Temperatura</option>
+        </select>
+
+        <label for="valor">Valor</label>
+        <input type="text" id="valor" inputmode="decimal"
+               placeholder="Ex.: 5 ou 2,5" autocomplete="off">
+
+        <label for="origem">De</label>
+        <select id="origem"></select>
+
+        <label for="destino">Para</label>
+        <select id="destino"></select>
+
+        <button type="submit">Converter</button>
+      </form>
+
+      <p id="resultado" class="resultado" aria-live="polite"></p>
+    </section>
   </main>
 
   <footer>
