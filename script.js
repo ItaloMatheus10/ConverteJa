@@ -26,6 +26,9 @@ const campoDestino = document.getElementById("destino");
 const formulario = document.getElementById("form-conversao");
 const campoValor = document.getElementById("valor");
 const areaResultado = document.getElementById("resultado");
+const listaHistorico = document.getElementById("historico");
+const avisoHistoricoVazio = document.getElementById("historico-vazio");
+const botaoLimpar = document.getElementById("limpar-historico");
 
 /* ===== Menus de unidades ===== */
 
@@ -122,9 +125,68 @@ function converter(evento) {
     `${formatarNumero(convertido)} ${simboloDestino}`;
 
   mostrarResultado(mensagem, "sucesso");
+    adicionarAoHistorico(mensagem);
+}
+
+/* ===== Histórico (localStorage) ===== */
+
+const CHAVE_HISTORICO = "converteja-historico";
+const LIMITE_HISTORICO = 5;
+
+// Lê o histórico salvo no navegador. Se não existir ou estiver
+// corrompido, devolve uma lista vazia em vez de quebrar o app.
+function carregarHistorico() {
+  try {
+    const dados = JSON.parse(localStorage.getItem(CHAVE_HISTORICO));
+    return Array.isArray(dados) ? dados : [];
+  } catch {
+    return [];
+  }
+}
+
+// Grava a lista no navegador (localStorage só guarda texto, daí o JSON)
+function salvarHistorico(lista) {
+  try {
+    localStorage.setItem(CHAVE_HISTORICO, JSON.stringify(lista));
+  } catch {
+    // Se o navegador bloquear o armazenamento, o app segue funcionando,
+    // apenas sem guardar o histórico.
+  }
+}
+
+// Redesenha a lista na página a partir do que está salvo
+function mostrarHistorico() {
+  const lista = carregarHistorico();
+
+  listaHistorico.replaceChildren();
+  for (const texto of lista) {
+    const item = document.createElement("li");
+    item.textContent = texto;
+    listaHistorico.append(item);
+  }
+
+  const vazio = lista.length === 0;
+  avisoHistoricoVazio.hidden = !vazio;
+  botaoLimpar.hidden = vazio;
+}
+
+// Coloca a conversão mais recente no topo e mantém só as 5 últimas
+function adicionarAoHistorico(mensagem) {
+  const lista = carregarHistorico();
+  lista.unshift(mensagem);
+  salvarHistorico(lista.slice(0, LIMITE_HISTORICO));
+  mostrarHistorico();
+}
+
+// Apaga o histórico do navegador e atualiza a tela
+function limparHistorico() {
+  localStorage.removeItem(CHAVE_HISTORICO);
+  mostrarHistorico();
 }
 
 /* ===== Inicialização ===== */
 campoCategoria.addEventListener("change", preencherUnidades);
 preencherUnidades();
 formulario.addEventListener("submit", converter);
+botaoLimpar.addEventListener("click", limparHistorico);
+mostrarHistorico();
