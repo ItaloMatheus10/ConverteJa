@@ -32,7 +32,7 @@ histórico ficam no localStorage do navegador.
 ## Como rodar
 
 1. Clone o repositório:
-   git clone https://github.com/SEU-USUARIO/converteja.git
+   git clone https://github.com/ItaloMatheus10/converteja.git
 2. Abra a pasta e rode um servidor local, por uma destas opções:
    - VS Code com a extensão **Live Server** (botão "Go Live")
    - Terminal: `python -m http.server 8000` e acesse http://localhost:8000
