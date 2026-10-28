@@ -136,3 +136,71 @@ form button:hover {
   color: var(--cor-texto);
   border-color: var(--cor-texto-suave);
 }
+
+/* ===== Área de resultado ===== */
+.resultado {
+  margin: 1rem 0 0;
+  padding: 0.9rem 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: var(--raio);
+}
+
+/* Enquanto não há resultado, a caixa não aparece */
+.resultado:empty {
+  display: none;
+}
+
+/* Classes aplicadas pelo JavaScript conforme o caso */
+.resultado.sucesso {
+  color: #0f5132;
+  background-color: #d1e7dd;
+}
+
+.resultado.erro {
+  color: #842029;
+  background-color: #f8d7da;
+}
+
+/* ===== Histórico ===== */
+.historico {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.historico li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.historico li:last-child {
+  border-bottom: none;
+}
+
+.aviso {
+  margin: 0;
+  color: var(--cor-texto-suave);
+  font-style: italic;
+}
+
+/* ===== Telas maiores (tablets e computadores) ===== */
+@media (min-width: 768px) {
+  header {
+    padding: 2.5rem 1rem;
+  }
+
+  header h1 {
+    font-size: 2.4rem;
+  }
+
+  main {
+    max-width: 560px;
+    padding: 2rem 1rem;
+  }
+
+  .cartao {
+    padding: 1.75rem;
+  }
+}
